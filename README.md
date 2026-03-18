@@ -15,4 +15,5 @@
     pip install -r /Downloads/GavinWare/requirements.txt
   <code>
 </pre></p>
+<p>4. If that doesn't work, </p>
 
