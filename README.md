@@ -2,7 +2,7 @@
 
 <style>
   h1 {
-    color: purple;
+    color: violet;
   }
 </style>
 <h1>A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.</h1>
