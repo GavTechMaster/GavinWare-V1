@@ -11,7 +11,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ### Option 2: File Explorer
 1. Download ZIP from GitHub
 ![Download ZIP GitHub](./download_zip.png)
-2. Extract it within your Downloads (or the directory you installed it it).
+2. Extract it within your Downloads (or the directory you installed it in).
 ### If you don't have python installed:
 1. Go to python.org, then select Downloads.
 2. Select "get the standalone installer for Python 3.X.X" (for easier installation).
