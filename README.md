@@ -34,3 +34,14 @@ cd GavinWare
 # Make sure you're inside the GavinWare folder or you are using an absolute path
 python main.py
 ```
+## Linux
+### If you don't have python installed:
+Type the command:
+```bash
+sudo apt install python3
+```
+### If you don't have pip3 installed:
+```bash
+sudo apt install python3-pip
+```
+### If you don't have the required dependencies:
