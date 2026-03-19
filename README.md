@@ -103,7 +103,7 @@ sudo chmod u+x main.py
 python3 main.py
 ```
 ### If you don't have python installed:
-Type the command:
+Type the commands:
 ```bash
 sudo apt update
 ```
