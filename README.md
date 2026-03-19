@@ -1,6 +1,6 @@
 # GavinWare V1
 A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.<br>
-(sorry if the installation tutorial is insulting other GitHub user's intelligence, but most of this meant to be shared to my friends who are non GitHub users)<br><br>
+(sorry if the installation tutorial is insulting other GitHub user's intelligence, but most of this meant to be shared to my friends who are non GitHub users)<br>
 # DISCLAIMER, THIS GAME USES SOME COPYRIGHTED AUDIO FROM THE TITLES WarioWare: Mega Microgames and The Legend of Zelda: Breath of the Wild Respectively. I do not claim any ownership of any of the audio used whatsoever.
 # Installation
 ## Windows
