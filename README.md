@@ -10,7 +10,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
 ### Option 2: File Explorer
 1. Download ZIP from GitHub
-<img src="download_zip.png" height=300 width=300>
+![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it it).
 ### If you don't have python installed:
 1. Go to python.org, then select Downloads.
