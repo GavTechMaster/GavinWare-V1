@@ -44,3 +44,13 @@ cd GavinWare
 python main.py
 ```
 ## MacOS
+### Option 1: Terminal
+1. Open terminal, then go to a directory of your choosing.
+2. Type the command:
+```bash
+git clone https://github.com/GavTechMaster/GavinWare-V1.git
+```
+### Option 2: Finder
+1. Download ZIP from GitHub
+![Download ZIP GitHub](./download_zip.png)
+2. Extract it within your Downloads (or the directory you installed it in).
