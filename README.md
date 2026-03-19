@@ -33,8 +33,7 @@ pip install pygame-ce; pip install numpy
 ```
 ### Opening the file:
 #### Option 1: File Explorer
-1. Right click on the main.py file.
-2. If you're on Windows 11 click Open with > Python (or Choose Another App > Python), otherwise if you're on Windows 10 click Open with > Python
+1. Right click on the main.py file, then Open with > Python (or Open with > Choose another app > Python)
 #### Option 2: Terminal
 1. Open terminal (or Powershell) then type these commands:
 ```bash
