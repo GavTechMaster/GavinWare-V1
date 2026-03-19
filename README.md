@@ -2,13 +2,13 @@
 A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.
 # Installation
 ## Windows
-### Option 1: Terminal
+### Option 1: Terminal (If you have Git installed)
 1. Open terminal (or Powershell), then go to a directory of your choosing.
 2. Type the command:
 ```bash
 git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
-### Option 2: File Explorer
+### Option 2: File Explorer (If you don't have Git installed)
 1. Download ZIP from GitHub
 ![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it in).
@@ -23,7 +23,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 cd GavinWare
 ```
 ```bash
-# Make sure you're inside the GavinWare folder or you are using an absolute path
+# Make sure you're inside the GavinWare directory or you are using an absolute path
 python main.py
 ```
 ### If you don't have python installed:
@@ -36,7 +36,7 @@ python main.py
 cd GavinWare
 ```
 ```bash
-# Make sure you are inside the GavinWare folder or you are using an absolute path
+# Make sure you are inside the GavinWare directory or you are using an absolute path
 pip install -r requirements.txt
 ```
 2. If that doesn't work, just type this command to install them simultaneously:
@@ -44,13 +44,13 @@ pip install -r requirements.txt
 pip install pygame-ce; pip install numpy
 ```
 ## MacOS
-### Option 1: Terminal
+### Option 1: Terminal (If you have Git installed)
 1. Open terminal, then go to a directory of your choosing.
 2. Type the command:
 ```bash
 git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
-### Option 2: Finder
+### Option 2: Finder (If you don't have Git installed)
 1. Download ZIP from GitHub
 ![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it in).
@@ -64,7 +64,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 cd GavinWare
 ```
 ```bash
-# Make sure you're inside the GavinWare folder or you are using an absolute path
+# Make sure you're inside the GavinWare directory or you are using an absolute path
 python3 main.py
 ```
 ### If you don't have python installed:
@@ -77,7 +77,7 @@ python3 main.py
 cd GavinWare
 ```
 ```bash
-# Make sure you are inside the GavinWare folder or you are using an absolute path
+# Make sure you are inside the GavinWare directory or you are using an absolute path
 pip3 install -r requirements.txt
 ```
 2. If that doesn't work, just type this command to install them simultaneously:
@@ -85,8 +85,20 @@ pip3 install -r requirements.txt
 pip3 install pygame-ce; pip3 install numpy
 ```
 ## Linux
-### Terminal:
-
-2. Type the command to add executable access to you python file:
+### Terminal
+1. Install git:
+```bash
+sudo apt update && sudo apt install git
+```
+2. Type this command to clone this respitory to you computer:
+```bash
+git clone https://github.com/GavTechMaster/GavinWare-V1.git
+```
+3. Go inside the GavinWare directory and add executable permissions to the main.py file:
 ```bash
 sudo chmod u+x main.py
+```
+4. Run the python file:
+```bash
+python3 main.py
+```
