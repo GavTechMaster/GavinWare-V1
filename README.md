@@ -102,3 +102,25 @@ sudo chmod u+x main.py
 ```bash
 python3 main.py
 ```
+### If you don't have python installed:
+Type the command:
+```bash
+sudo apt update
+```
+```bash
+sudo apt install python3
+```
+### If you don't have the required dependencies:
+1. Open terminal, FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
+```bash
+# Make sure this is relative to you in CLI or make it an absolute path
+cd GavinWare
+```
+```bash
+# Make sure you are inside the GavinWare directory or you are using an absolute path
+pip3 install -r requirements.txt
+```
+2. If that doesn't work, just type this command to install them simultaneously:
+```bash
+pip3 install pygame-ce; pip3 install numpy
+```
