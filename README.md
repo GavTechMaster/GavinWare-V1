@@ -1,6 +1,6 @@
 # GavinWare V1
 A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.<br>
-(sorry if the installation tutorial is insulting other GitHub user's intelligence, but this will also be shared to my friends who are non GitHub users)
+(sorry if the installation tutorial is insulting other GitHub user's intelligence, but most of this meant to be shared to my friends who are non GitHub users)
 # Installation
 ## Windows
 ### Option 1: Terminal (If you have Git installed)
