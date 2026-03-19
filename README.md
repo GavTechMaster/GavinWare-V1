@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ```
 2. If that doesn't work, just type this command to install them simultaneously:
 ```bash
-pip install pygame-ce; pip install numpy
+pip install pygame-ce numpy
 ```
 ## MacOS
 ### Option 1: Terminal (If you have Git installed)
@@ -83,7 +83,7 @@ pip3 install -r requirements.txt
 ```
 2. If that doesn't work, just type this command to install them simultaneously:
 ```bash
-pip3 install pygame-ce; pip3 install numpy
+pip3 install pygame-ce numpy
 ```
 ## Linux
 ### Terminal
@@ -123,5 +123,5 @@ pip3 install -r requirements.txt
 ```
 2. If that doesn't work, just type this command to install them simultaneously:
 ```bash
-pip3 install pygame-ce; pip3 install numpy
+pip3 install pygame-ce numpy
 ```
