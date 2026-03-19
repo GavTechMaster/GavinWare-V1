@@ -58,7 +58,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 1. Go to python.org, then go to Downloads > "Download for macOS Python 3.X.X"
 ![Python.org Install](./python_install_macos.png)
 ### If you don't have the required dependencies:
-1. Open terminal (or Powershell), FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
+1. Open terminal, FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
 ```bash
 # Make sure this is relative to you in CLI or make it an absolute path
 cd GavinWare
@@ -70,4 +70,17 @@ pip3 install -r requirements.txt
 2. If that doesn't work, just type this command to install them simultaneously:
 ```bash
 pip3 install pygame-ce; pip3 install numpy
+```
+### Opening the file:
+#### Option 1: Finder
+1. Double click on the main.py file, then open with Python.
+#### Option 2: Terminal
+1. Open terminal, then type these commands:
+```bash
+# Make sure this is relative to you in CLI or make it an absolute path
+cd GavinWare
+```
+```bash
+# Make sure you're inside the GavinWare folder or you are using an absolute path
+python3 main.py
 ```
