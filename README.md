@@ -11,7 +11,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
 ### Option 2: File Explorer (If you don't have Git installed)
 1. Download ZIP from GitHub
-![Download ZIP GitHub](./download_zip.png)
+![Download ZIP GitHub](./download_zip_github.png)
 2. Extract it within your Downloads (or the directory you installed it in).
 ### Opening the file:
 #### Option 1: File Explorer
@@ -53,7 +53,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
 ### Option 2: Finder (If you don't have Git installed)
 1. Download ZIP from GitHub
-![Download ZIP GitHub](./download_zip.png)
+![Download ZIP GitHub](./download_zip_github.png)
 2. Extract it within your Downloads (or the directory you installed it in).
 ### Opening the file:
 #### Option 1: Finder
