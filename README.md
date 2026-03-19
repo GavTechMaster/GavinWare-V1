@@ -14,7 +14,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 2. Extract it within your Downloads (or the directory you installed it in).
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Or get the standalone installer for Python 3.X.X"
-![Python.org Install](./python_downloads.png)
+![Python.org Install](./python_install_windows.png)
 ### If you don't have the required dependencies:
 1. Open terminal (or Powershell), FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
 ```bash
@@ -54,3 +54,6 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 1. Download ZIP from GitHub
 ![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it in).
+### If you don't have python installed:
+1. Go to python.org, then go to Downloads > "Download for macOS Python 3.X.X"
+![Python.org Install](./python_install_macos.png)
