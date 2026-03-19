@@ -14,14 +14,14 @@
   <code>
     # Make sure this is the correct file path
     pip install -r /Downloads/GavinWare/requirements.txt
-  <code>
+  </code>
   </pre>
 </p>
 <p>4. If that doesn't work, just type this command to install them simultaneously:
   <pre>
   <code>
     pip install pygame-ce; pip install numpy
-  <code>
+  </code>
   </pre>
 </p>
 
