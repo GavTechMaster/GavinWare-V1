@@ -4,9 +4,9 @@ A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.<
 ### DISCLAIMER, THIS GAME USES SOME COPYRIGHTED AUDIO FROM THE TITLES WarioWare: Mega Microgames and The Legend of Zelda: Breath of the Wild Respectively. I do not claim any ownership of any of the audio used whatsoever.
 
 ## Controls:
-W - Main Select Button
-S - Back or Cancel Button
-A - Button used in microgames
+W - Main Select Button<br>
+S - Back or Cancel Button<br>
+A - Button used in microgames<br>
 D - Pause Button
 
 ## MOUSE IS NOT USED, USE ARROW KEYS INSTEAD
