@@ -13,10 +13,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it in).
 ### If you don't have python installed:
-1. Go to python.org, then select Downloads.
-2. Select "get the standalone installer for Python 3.X.X" (for easier installation).
-3. Open the installer and check the box "Add Python 3.X to PATH".
-4. Click on "Install Now" and follow further default instructions.
+1. Go to python.org, then go to Downloads > "Or get the standalone installer for Python 3.X.X"
 ### If you don't have the required dependencies:
 1. Open terminal (or Powershell), FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
 ```bash
@@ -45,14 +42,4 @@ cd GavinWare
 # Make sure you're inside the GavinWare folder or you are using an absolute path
 python main.py
 ```
-## Linux
-### If you don't have python installed:
-Type the command:
-```bash
-sudo apt install python3
-```
-### If you don't have pip3 installed:
-```bash
-sudo apt install python3-pip
-```
-### If you don't have the required dependencies:
+## MacOS
