@@ -12,6 +12,20 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 1. Download ZIP from GitHub
 ![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it in).
+### Opening the file:
+#### Option 1: File Explorer
+1. Right click on the main.py file, then Open with > Python (or Open with > Choose another app > Python)
+![File Explorer main.py](./file_explore_open.png)
+#### Option 2: Terminal
+1. Open terminal (or Powershell) then type these commands:
+```bash
+# Make sure this is relative to you in CLI or make it an absolute path
+cd GavinWare
+```
+```bash
+# Make sure you're inside the GavinWare folder or you are using an absolute path
+python main.py
+```
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Or get the standalone installer for Python 3.X.X"
 ![Python.org Install](./python_install_windows.png)
@@ -29,20 +43,6 @@ pip install -r requirements.txt
 ```bash
 pip install pygame-ce; pip install numpy
 ```
-### Opening the file:
-#### Option 1: File Explorer
-1. Right click on the main.py file, then Open with > Python (or Open with > Choose another app > Python)
-![File Explorer main.py](./file_explore_open.png)
-#### Option 2: Terminal
-1. Open terminal (or Powershell) then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare
-```
-```bash
-# Make sure you're inside the GavinWare folder or you are using an absolute path
-python main.py
-```
 ## MacOS
 ### Option 1: Terminal
 1. Open terminal, then go to a directory of your choosing.
@@ -54,6 +54,19 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 1. Download ZIP from GitHub
 ![Download ZIP GitHub](./download_zip.png)
 2. Extract it within your Downloads (or the directory you installed it in).
+### Opening the file:
+#### Option 1: Finder
+1. Double click on the main.py file, then open with Python.
+#### Option 2: Terminal
+1. Open terminal, then type these commands:
+```bash
+# Make sure this is relative to you in CLI or make it an absolute path
+cd GavinWare
+```
+```bash
+# Make sure you're inside the GavinWare folder or you are using an absolute path
+python3 main.py
+```
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Download for macOS Python 3.X.X"
 ![Python.org Install](./python_install_macos.png)
@@ -71,16 +84,9 @@ pip3 install -r requirements.txt
 ```bash
 pip3 install pygame-ce; pip3 install numpy
 ```
-### Opening the file:
-#### Option 1: Finder
-1. Double click on the main.py file, then open with Python.
-#### Option 2: Terminal
-1. Open terminal, then type these commands:
+## Linux
+### Terminal:
+
+2. Type the command to add executable access to you python file:
 ```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare
-```
-```bash
-# Make sure you're inside the GavinWare folder or you are using an absolute path
-python3 main.py
-```
+sudo chmod u+x main.py
