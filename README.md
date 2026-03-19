@@ -9,15 +9,15 @@
 <p>4. Click on <q>Install Now</q> and follow further default instructions</p>
 <h3>If you don't have the required dependencies:</h3>
 <p>1. Extract the GavinWare ZIP file</p>
-<p>2. Open terminal (or Powershell) and type the command<pre>
+<p>2. Open terminal (or Powershell) and type the command
   <code>
     # Make sure this is the correct file path
     pip install -r /Downloads/GavinWare/requirements.txt
   <code>
-</pre></p>
-<p>4. If that doesn't work, just type this command to install them simultaneously:<pre>
+</p>
+<p>4. If that doesn't work, just type this command to install them simultaneously:
   <code>
     pip install pygame-ce; pip install numpy
   <code>
-  </pre></p>
+</p>
 
