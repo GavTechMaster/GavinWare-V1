@@ -1347,7 +1347,19 @@ def azula_vs_katara():
     else:
         win_label = font.render("You (Katara) Win!", False, (0, 255, 0))
         screen.blit(win_label, (round(screen_width / 2) - round(win_label.get_width() / 2), 20))
-
+    
+    action_label = small_font.render("Defeat Azula!", False, (0, 255, 0))
+    hint_label = medium_font.render("When Azula is about to charge, freezing her will be useful.", False, (0, 0, 255), wraplength=screen_width // 6)
+    icebend_label = small_font.render("Press W to icebend", False, (255, 0, 0))
+    heal_label = small_font.render("Press S to heal", False, (255, 255, 255))
+    waterfall_label = small_font.render("Press and hold A to make a waterfall", False, (255, 255, 0))
+    freeze_label = small_font.render("Press UP to freeze Azula", False, (255, 255, 255))
+    screen.blit(action_label, (0, 0))
+    screen.blit(hint_label, (0, action_label.get_height()))
+    screen.blit(icebend_label, (screen_width - icebend_label.get_width(), 0))
+    screen.blit(heal_label, (screen_width - heal_label.get_width(), icebend_label.get_height()))
+    screen.blit(waterfall_label, (screen_width - waterfall_label.get_width(), heal_label.get_height() + icebend_label.get_height()))
+    screen.blit(freeze_label, (screen_width - freeze_label.get_width(), heal_label.get_height() + icebend_label.get_height() + waterfall_label.get_height()))
 
 microgames = [change_image, fire_out, place_arrow, shake_can, shear_peasants]
 bosses = [azula_vs_katara]
