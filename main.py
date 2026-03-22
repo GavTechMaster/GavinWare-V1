@@ -830,7 +830,7 @@ def kuvira_vs_azula():
         else:
             azula_velocity_Y = 0
         
-        if azula_velocity_Y <= -screen_height // 3 - azula.image.get_height():
+        if azula_velocity_Y <= -screen_height // 2 - azula.image.get_height():
             azula_falling = True
 
         if azula_rect.y >= screen_height - azula.image.get_height():
