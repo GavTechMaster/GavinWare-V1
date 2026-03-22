@@ -1306,7 +1306,7 @@ def azula_vs_katara():
         pass
     
     action_label = small_font.render("Defeat Azula!", False, (0, 255, 0))
-    hint_label = medium_font.render("When Azula is about to charge, freezing her will be useful.", False, (0, 0, 255), wraplength=action_label.get_width())
+    hint_label = medium_font.render("When Azula is about to charge, freezing her will be useful.", False, (0, 0, 255), wraplength=screen_width // 6)
     icebend_label = small_font.render("Press W to icebend", False, (255, 0, 0))
     heal_label = small_font.render("Press S to heal", False, (255, 255, 255))
     waterfall_label = small_font.render("Press and hold A to make a waterfall", False, (255, 255, 0))
@@ -1350,7 +1350,7 @@ def azula_vs_katara():
 
 
 microgames = [change_image, fire_out, place_arrow, shake_can, shear_peasants]
-bosses = [kuvira_vs_azula, azula_vs_katara]
+bosses = [azula_vs_katara]
 
 # Functional Functions
 def score_eligible():
