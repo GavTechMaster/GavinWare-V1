@@ -848,7 +848,7 @@ def kuvira_vs_azula():
         screen.blit(kuvira.image, kuvira_rect)
         action_label = small_font.render("Defeat Kuvira!", False, (0, 255, 0))
         hint_1_label = medium_font.render("Jump to dodge metal strips", False, (150, 150, 150))
-        hint_2_label = medium_font.render("Earth walls burn in 4 hits.", False, (150, 75, 0))
+        hint_2_label = medium_font.render("Earth walls burn in 4 hits", False, (150, 75, 0))
         firebend_label = small_font.render("Press W to firebend", False, (255, 0, 0))
         jump_label = small_font.render("Press S to jump", False, (255, 255, 255))
         fireshield_label = small_font.render("Press and hold A to fireshield", False, (255, 255, 0))
