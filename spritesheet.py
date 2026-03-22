@@ -1,5 +1,20 @@
-import pygame
-import numpy as np
+import time, importlib
+
+def ensure_module(name, import_name=None):
+    if import_name is None:
+        import_name = name
+
+    while True:
+        try:
+            module = importlib.import_module(import_name)
+            globals()[import_name] = module
+            return module
+        except ImportError:
+            time.sleep(0.1)
+
+# Force load AFTER install
+np = ensure_module("numpy")
+pygame = ensure_module("pygame-ce", "pygame")
 
 class SpriteSheet:
     def __init__(self, spritesheet_path, sprite_sizes, sprite_amount, scale=1, exact_size=False):
@@ -19,7 +34,12 @@ class SpriteSheet:
                     self.sprite_index_x += sprite_sizes[0]
                 sprite_rect = (self.sprite_index_x, self.sprite_index_y, sprite_sizes[0], sprite_sizes[1])
                 sprite_rect = self.spritesheet.subsurface(sprite_rect)
-                alpha_array = pygame.surfarray.pixels_alpha(sprite_rect)
+                while True:
+                    try:
+                        alpha_array = pygame.surfarray.pixels_alpha(sprite_rect)
+                        break
+                    except:
+                        pass
                 if np.any(alpha_array > 0):
                     if not exact_size:
                         if not isinstance(self.scale, tuple):

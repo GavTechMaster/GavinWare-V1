@@ -1,41 +1,57 @@
 # GavinWare Version 1
 
-import pygame, sys, random, os, json
+import sys, random, json, os, importlib
+
+needed_modules = ['numpy', 'pygame-ce']
+
+for module in needed_modules:
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+    try:
+        if module == 'pygame-ce':
+            # Imports pygame
+            pygame = importlib.import_module(module[:6])
+        else:
+            globals()[module] = importlib.import_module(module)
+    except ImportError:
+        print(f'The following module has to be installed:\n"{module}"')
+        while True:
+            try:
+                install_module = input("Do you want it installed? (y/n): ").lower()
+                if install_module in ("y", "n"):
+                    break
+                else:
+                    raise ValueError('You must type "y" or "n".')
+            except ValueError as v:
+                print(v)
+        if 'y' in install_module:
+            try:
+                return_code = os.system(f'pip install {module}' if os.name == 'nt' else f'pip3 install {module}')
+                if return_code != 0:
+                    raise ImportError('Unable to install module: {module}')
+                else:
+                    if module == 'pygame-ce':
+                        # Imports pygame
+                        pygame = importlib.import_module(module[:6])
+                    else:
+                        globals()[module] = importlib.import_module(module)
+            except ImportError as i:
+                print(i)
+        else:
+            print("Exiting program...")
+            sys.exit()
+
 from pathlib import Path
 from buttons import Button
 from spritesheet import SpriteSheet
 from mouse import Mouse
 from interactive_items import Interactive_Item
 
-# Additions to make this work on the Gameboard
-# os.chdir(os.path.dirname(__file__))
-# import warnings, threading
-# from _joyhelper import start as remap
-# sys.path.append(os.path.dirname(__file__)+'/..')
-# sys.path.append(os.path.dirname(__file__)+'/.')
-# warnings.filterwarnings("ignore", category=UserWarning)
-# os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
-# print("Loading...")
-# thread = threading.Thread(target=remap)
-# thread.daemon = True
-# thread.start()
-# os.chdir(os.path.dirname(__file__))
-
 pygame.init()
 dev_mode = False
 
-# if os.name == 'nt':
-#     os.system('cls')
-# else:
-#     os.system('clear')
-
-# dev_mode = input("Do you want dev mode activated? (Default: n): ").lower()
-
-# if "y" in dev_mode:
-#     screen_width = round(pygame.display.Info().current_w * 0.5)
-#     screen_height = round(pygame.display.Info().current_h)
-#     screen = pygame.display.set_mode((screen_width, screen_height), pygame.RESIZABLE)
-# else:
 screen_width = int(pygame.display.Info().current_w // 2)
 screen_height = int(pygame.display.Info().current_h * 0.8)
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.RESIZABLE)
@@ -154,7 +170,7 @@ exit_button = Button("Leave_Button.png", "Leave_Button_Selected.png", main_menu_
 play_pause_button = Button("Play_Button.png", "Selected_Play_Button.png", pause_menu_buttons, pause_menu_button_index, button_scale)
 exit_pause_button = Button("Leave_Button.png", "Leave_Button_Selected.png", pause_menu_buttons, pause_menu_button_index, button_scale)
 
-gavin_boombox_animation = SpriteSheet("GavinWare_Boombox.png", (75, 85), (7, 7), scale=item_scale)
+gavin_boombox_animation = SpriteSheet("gavinWare_boombox.png", (75, 80), (7, 7), scale=item_scale)
 mouse = Mouse("Select_Mouse.png", "Select_Mouse_Ring.png", screen=(screen_width, screen_height), speed=12, scale=2)
 mouse_display = pygame.sprite.Group()
 mouse_display.add(mouse)
@@ -1439,13 +1455,15 @@ def intro_screen():
     if game_state == "intro":
         screen.fill((0, 0, 0))
         gavinware_title_label = font.render("Welcome to GavinWare!", False, (0, 180, 255))
-        gavinware_description = medium_font.render("Welcome to the fun, engaging game of GavinWare! Which is DEFINITELY NOT inspired by a similar game whose main character is a rival to a famous plumber who steps on turtles. Come enjoy many of my microgames, and keep up with how faster and faster the challenges may be.", False, (255, 255, 255), wraplength=screen_width)
+        gavinware_description = medium_font.render("Welcome to the fun, engaging game of GavinWare! Which is DEFINITELY NOT inspired by a similar game whose main character is a rival to a famous plumber who steps on turtles. Come enjoy many of my microgames!", False, (255, 255, 255), wraplength=screen_width)
+        reading_disclaimer = font.render("BASIC READING ABILITY NEEDED FOR THIS GAME, hints will be shown on the top corners on the screen", False, (255, 0, 0), wraplength=screen_width)
         confirm_label = font.render("Press W to continue", False, (255, 0, 0))
         confirm_label.set_alpha(fade_alpha)
         pause_label = font.render("Press D to pause", False, (0, 0, 255))
         pause_label.set_alpha(fade_alpha)
         screen.blit(gavinware_title_label, (round(screen_width/2) - round(gavinware_title_label.get_width()/2), 55))
-        screen.blit(gavinware_description, (0, round(screen_height/2) - round(gavinware_description.get_height()/2)))
+        screen.blit(gavinware_description, (0, round(screen_height/2) - round((gavinware_description.get_height() + reading_disclaimer.get_height())/2)))
+        screen.blit(reading_disclaimer, (0, round(screen_height/2) - round((gavinware_description.get_height() + reading_disclaimer.get_height())/2) + gavinware_description.get_height()))
         screen.blit(confirm_label, (round(screen_width/2) - round(confirm_label.get_width()/2), screen_height - 125))
         screen.blit(pause_label, (round(screen_width/2) - round(pause_label.get_width()/2), screen_height - 125 - pause_label.get_height()))
     else:
@@ -1590,6 +1608,12 @@ while running:
                         case "scoreboard_screen":
                             pygame.quit()
                             sys.exit()
+                        case _ if current_microgame == shake_can:
+                            if soda_shake:
+                                if up_times < soda_shake_amount and (up_times == down_times or up_times < down_times):
+                                    up_times += 1
+                            elif not soda_shake and soda_stop_fizz > 0:
+                                soda_stop_fizz -= 1
                         case "microgame":
                             match current_microgame:
                                 case _ if current_microgame == change_image:
@@ -1616,9 +1640,6 @@ while running:
                                         fire_stamina -= 1
                                 case _ if current_microgame == place_arrow:
                                     arrow_placed = True
-                                case _ if current_microgame == shake_can:
-                                    if not soda_shake and soda_stop_fizz > 0:
-                                        soda_stop_fizz -= 1
                                 case _ if current_microgame == shear_peasants:
                                     if peasants_sheared < peasants_to_shear:
                                         match peasants_sheared:
@@ -1665,6 +1686,10 @@ while running:
                                 if not waterheal_cooldown and not waterfall_on and not waterfall_cooldown and not boss_finished:
                                     katara.image = katara.sprites[1]
                                     waterheal_on = True
+                            case _ if current_microgame == shake_can:
+                                if soda_shake:
+                                    if down_times < soda_shake_amount and (up_times == down_times or down_times < up_times):
+                                        down_times += 1
             
             if event.key == yellow_button:
                 if not paused:
