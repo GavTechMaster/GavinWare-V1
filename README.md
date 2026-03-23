@@ -1,7 +1,7 @@
 # GavinWare V1
 A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.<br>
-(sorry if the installation tutorial is insulting other GitHub user's intelligence, but most of this meant to be shared to my friends who are non GitHub users)<br>
-### DISCLAIMER, THIS GAME USES SOME COPYRIGHTED AUDIO FROM THE TITLES WarioWare: Mega Microgames, The Legend of Zelda: Breath of the Wild, Avatar: The Last Airbender, and The Legend of Korra Respectively. I do not claim any ownership of any of the audio used whatsoever.
+#### DISCLAIMER, THIS GAME USES SOME COPYRIGHTED AUDIO FROM THE TITLES WarioWare: Mega Microgames, The Legend of Zelda: Breath of the Wild, Avatar: The Last Airbender, and The Legend of Korra Respectively. I do not claim any ownership of any of the audio used whatsoever.
+## This game also uses a scoreboard: [GavTechMaster's Scoreboards](https://gavtechmaster.github.io)
 
 ## Controls:
 W - Main Select Button<br>
@@ -40,20 +40,7 @@ python main.py
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Or get the standalone installer for Python 3.X.X"
 ![Python.org Install](./python_install_windows.png)
-### If you don't have the required dependencies:
-1. Open terminal (or Powershell), FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main
-```
-```bash
-# Make sure you are inside the GavinWare directory or you are using an absolute path
-pip install -r requirements.txt
-```
-2. If that doesn't work, just type this command to install them simultaneously:
-```bash
-pip install pygame-ce numpy
-```
+2. On the installation screen, ADD PYTHON AS PATH!
 ## MacOS
 ### Option 1: Terminal (If you have Git installed)
 1. Open terminal, then go to a directory of your choosing.
@@ -72,7 +59,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 1. Open terminal, then type these commands:
 ```bash
 # Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main-V1-main
+cd GavinWare-V1-main
 ```
 ```bash
 # Make sure you're inside the GavinWare directory or you are using an absolute path
@@ -81,20 +68,7 @@ python3 main.py
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Download for macOS Python 3.X.X"
 ![Python.org Install](./python_install_macos.png)
-### If you don't have the required dependencies:
-1. Open terminal, FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main
-```
-```bash
-# Make sure you are inside the GavinWare directory or you are using an absolute path
-pip3 install -r requirements.txt
-```
-2. If that doesn't work, just type this command to install them simultaneously:
-```bash
-pip3 install pygame-ce numpy
-```
+2. On the installation screen, ADD PYTHON AS PATH!
 ## Linux
 ### Terminal
 1. Install git:
@@ -106,6 +80,9 @@ sudo apt update && sudo apt install git
 git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
 3. Go inside the GavinWare directory and add executable permissions to the main.py file:
+```bash
+cd GavinWare-V1-main
+```
 ```bash
 sudo chmod u+x main.py
 ```
@@ -120,18 +97,4 @@ sudo apt update
 ```
 ```bash
 sudo apt install python3
-```
-### If you don't have the required dependencies:
-1. Open terminal, FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main
-```
-```bash
-# Make sure you are inside the GavinWare directory or you are using an absolute path
-pip3 install -r requirements.txt
-```
-2. If that doesn't work, just type this command to install them simultaneously:
-```bash
-pip3 install pygame-ce numpy
 ```
