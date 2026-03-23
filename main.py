@@ -1395,6 +1395,20 @@ def score_eligible():
 def add_score(player_name, new_score):
     global scoreboard_data
     if scoreboard_path.exists():
+        try:
+            DATABASE_PATH = "https://scoreboard-cde81-default-rtdb.firebaseio.com/.json"
+            scoreboard_request = requests.get(DATABASE_PATH)
+            scoreboard_request.raise_for_status()
+            firebase_data = scoreboard_request.json()
+            with open(scoreboard_path, 'w') as sp:
+                json.dump(firebase_data, sp, indent=4)
+        except requests.exceptions.HTTPError as err:
+            print(f"Error fetching data from Firebase: HTTP error occurred: {err}")
+            print(f"Response status code: {scoreboard_request.status_code}")
+            print(f"Response content: {scoreboard_request.text}")
+        except requests.exceptions.RequestException as err:
+            print(f"Error fetching data from Firebase: An unexpected request error occurred: {err}")
+            print("Please check your internet connection or the DATABASE_URL.")
         with open(scoreboard_path, "r") as f:
             scoreboard_data = json.load(f)
             scores = [score for score in scoreboard_data.values() if isinstance(score, int)]
