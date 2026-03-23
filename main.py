@@ -1,6 +1,8 @@
 # GavinWare Version 1
 
-import sys, random, json, os, importlib, requests
+# NOTE: Ignore the "requests" is not defined warning, it is defined on line 19 or line 41 when it is automatically installed with your permission.
+
+import sys, random, json, os, importlib
 
 needed_modules = ['requests', 'numpy', 'pygame-ce']
 

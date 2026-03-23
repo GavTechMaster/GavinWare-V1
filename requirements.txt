@@ -1,2 +1,3 @@
+requests
 pygame-ce
 numpy
