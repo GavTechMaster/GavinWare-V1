@@ -58,7 +58,7 @@ git clone https://github.com/GavTechMaster/GavinWare-V1.git
 1. Open terminal, then type these commands:
 ```bash
 # Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main-V1-main
+cd GavinWare-V1-main
 ```
 ```bash
 # Make sure you're inside the GavinWare directory or you are using an absolute path
@@ -78,6 +78,9 @@ sudo apt update && sudo apt install git
 git clone https://github.com/GavTechMaster/GavinWare-V1.git
 ```
 3. Go inside the GavinWare directory and add executable permissions to the main.py file:
+```bash
+cd GavinWare-V1-main
+```
 ```bash
 sudo chmod u+x main.py
 ```
