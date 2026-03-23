@@ -1,8 +1,8 @@
 # GavinWare Version 1
 
-import sys, random, json, os, importlib
+import sys, random, json, os, importlib, requests
 
-needed_modules = ['numpy', 'pygame-ce']
+needed_modules = ['requests', 'numpy', 'pygame-ce']
 
 for module in needed_modules:
     if os.name == 'nt':
@@ -163,6 +163,15 @@ scoreboard_data = {
     "score_four": 0,
     "score_five": 0
 }
+
+try:
+    scoreboard_request = requests.get("https://raw.githubusercontent.com/GavTechMaster/gavtechmaster.github.io/refs/heads/main/scoreboard.json")
+    scoreboard_request.raise_for_status()
+    if scoreboard_request.status_code == 200:
+        with open(scoreboard_path, "wb") as sp:
+            sp.write(scoreboard_request.content)
+except:
+    print(f"Cannot access online scoreboard.")
 
 play_button = Button("Play_Button.png", "Selected_Play_Button.png", main_menu_buttons, main_menu_button_index, button_scale)
 exit_button = Button("Leave_Button.png", "Leave_Button_Selected.png", main_menu_buttons, main_menu_button_index, button_scale)
