@@ -1,14 +1,14 @@
 {
+    "score_1": 3,
+    "score_2": 2,
+    "score_3": 0,
+    "score_4": 0,
+    "score_5": 0,
     "score_names": [
-        "",
-        "",
+        "GAV",
+        "AAA",
         "",
         "",
         ""
-    ],
-    "score_one": 0,
-    "score_two": 0,
-    "score_three": 0,
-    "score_four": 0,
-    "score_five": 0
+    ]
 }

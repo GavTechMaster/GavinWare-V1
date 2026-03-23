@@ -155,23 +155,20 @@ letter_3 = letters[letter_index_3]
 single_letter_index = 0
 score_name = letter_1 + letter_2 + letter_3
 scoreboard_path = Path("scoreboard.json")
-scoreboard_data = {
-    "score_names" : ["", "", "", "", ""],
-    "score_one": 0,
-    "score_two": 0,
-    "score_three": 0,
-    "score_four": 0,
-    "score_five": 0
-}
-
 try:
-    scoreboard_request = requests.get("https://raw.githubusercontent.com/GavTechMaster/gavtechmaster.github.io/refs/heads/main/scoreboard.json")
+    DATABASE_PATH = "https://scoreboard-cde81-default-rtdb.firebaseio.com/.json"
+    scoreboard_request = requests.get(DATABASE_PATH)
     scoreboard_request.raise_for_status()
-    if scoreboard_request.status_code == 200:
-        with open(scoreboard_path, "wb") as sp:
-            sp.write(scoreboard_request.content)
-except:
-    print(f"Cannot access online scoreboard.")
+    firebase_data = scoreboard_request.json()
+    with open(scoreboard_path, 'w') as sp:
+        json.dump(firebase_data, sp, indent=4)
+except requests.exceptions.HTTPError as err:
+    print(f"Error fetching data from Firebase: HTTP error occurred: {err}")
+    print(f"Response status code: {scoreboard_request.status_code}")
+    print(f"Response content: {scoreboard_request.text}")
+except requests.exceptions.RequestException as err:
+    print(f"Error fetching data from Firebase: An unexpected request error occurred: {err}")
+    print("Please check your internet connection or the DATABASE_URL.")
 
 play_button = Button("Play_Button.png", "Selected_Play_Button.png", main_menu_buttons, main_menu_button_index, button_scale)
 exit_button = Button("Leave_Button.png", "Leave_Button_Selected.png", main_menu_buttons, main_menu_button_index, button_scale)
@@ -1406,7 +1403,7 @@ def add_score(player_name, new_score):
                     keys = [key for key in scoreboard_data.keys() if isinstance(scoreboard_data[key], int)]
                     for i, key in enumerate(keys):
                         if new_score > scoreboard_data[key]:
-                            for j in range(len(keys) - 1, i, -1):
+                            for j in range(len(keys) - 2, i, -1):
                                 scoreboard_data[keys[j]] = scoreboard_data[keys[j - 1]]
                                 scoreboard_data["score_names"][j] = scoreboard_data["score_names"][j - 1]
                             scoreboard_data[key] = new_score
@@ -1555,30 +1552,30 @@ def scoreboard_screen():
         scoreboard_label = font.render("Scoreboard", False, (255, 255, 255))
         confirm_label = font.render("Press W to continue", False, (255, 0, 0))
         confirm_label.set_alpha(fade_alpha)
-        score_one_label = font.render(f"1 - {scoreboard_data["score_names"][0]}: {scoreboard_data["score_one"]}", False, (255, 255, 0))
-        screen.blit(score_one_label,
-            (round(screen_width/2) - round(score_one_label.get_width()/2),
-            round(screen_height * 1/10) - round(score_one_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
+        score_1_label = font.render(f"1 - {scoreboard_data["score_names"][0]}: {scoreboard_data["score_1"]}", False, (255, 255, 0))
+        screen.blit(score_1_label,
+            (round(screen_width/2) - round(score_1_label.get_width()/2),
+            round(screen_height * 1/10) - round(score_1_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
 
-        score_two_label = font.render(f"2 - {scoreboard_data["score_names"][1]}: {scoreboard_data["score_two"]}", False, (255, 255, 0))
-        screen.blit(score_two_label,
-            (round(screen_width/2) - round(score_two_label.get_width()/2),
-            round(screen_height * 2/10) - round(score_two_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
+        score_2_label = font.render(f"2 - {scoreboard_data["score_names"][1]}: {scoreboard_data["score_2"]}", False, (255, 255, 0))
+        screen.blit(score_2_label,
+            (round(screen_width/2) - round(score_2_label.get_width()/2),
+            round(screen_height * 2/10) - round(score_2_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
 
-        score_three_label = font.render(f"3 - {scoreboard_data["score_names"][2]}: {scoreboard_data["score_three"]}", False, (255, 255, 0))
-        screen.blit(score_three_label,
-            (round(screen_width/2) - round(score_three_label.get_width()/2),
-            round(screen_height * 3/10) - round(score_three_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
+        score_3_label = font.render(f"3 - {scoreboard_data["score_names"][2]}: {scoreboard_data["score_3"]}", False, (255, 255, 0))
+        screen.blit(score_3_label,
+            (round(screen_width/2) - round(score_3_label.get_width()/2),
+            round(screen_height * 3/10) - round(score_3_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
 
-        score_four_label = font.render(f"4 - {scoreboard_data["score_names"][3]}: {scoreboard_data["score_four"]}", False, (255, 255, 0))
-        screen.blit(score_four_label,
-            (round(screen_width/2) - round(score_four_label.get_width()/2),
-            round(screen_height * 4/10) - round(score_four_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
+        score_4_label = font.render(f"4 - {scoreboard_data["score_names"][3]}: {scoreboard_data["score_4"]}", False, (255, 255, 0))
+        screen.blit(score_4_label,
+            (round(screen_width/2) - round(score_4_label.get_width()/2),
+            round(screen_height * 4/10) - round(score_4_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
 
-        score_five_label = font.render(f"5 - {scoreboard_data["score_names"][4]}: {scoreboard_data["score_five"]}", False, (255, 255, 0))
-        screen.blit(score_five_label,
-            (round(screen_width/2) - round(score_five_label.get_width()/2),
-            round(screen_height * 5/10) - round(score_five_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
+        score_5_label = font.render(f"5 - {scoreboard_data["score_names"][4]}: {scoreboard_data["score_5"]}", False, (255, 255, 0))
+        screen.blit(score_5_label,
+            (round(screen_width/2) - round(score_5_label.get_width()/2),
+            round(screen_height * 5/10) - round(score_5_label.get_height()/2) + 55 + scoreboard_label.get_height() + 40))
 
         screen.blit(scoreboard_label, (round(screen_width/2) - round(scoreboard_label.get_width()/2), 55))
         screen.blit(confirm_label, (round(screen_width/2) - round(confirm_label.get_width()/2), screen_height - 125))
@@ -1629,6 +1626,22 @@ while running:
                             add_score(score_name, game_score)
                             game_state = "scoreboard_screen"
                         case "scoreboard_screen":
+                            try:
+                                with open(scoreboard_path, 'r') as sp:
+                                    scoreboard_data = json.load(sp)
+                                data_to_upload = json.dumps(scoreboard_data)
+                                DATABASE_PATH = "https://scoreboard-cde81-default-rtdb.firebaseio.com/.json"
+                                scoreboard_request = requests.put(DATABASE_PATH, data=data_to_upload)
+                                scoreboard_request.raise_for_status()
+                            except FileNotFoundError:
+                                print(f"Error: The file '{scoreboard_path}' was not found.")
+                            except json.JSONDecodeError:
+                                print(f"Error: Could not decode JSON from '{scoreboard_path}'. Please check the file's format.")
+                            except requests.exceptions.HTTPError as err:
+                                print(f"HTTP error occurred: {err}")
+                                print(f"Response content: {scoreboard_request.text}")
+                            except requests.exceptions.RequestException as err:
+                                print(f"An error occurred: {err}")
                             pygame.quit()
                             sys.exit()
                         case _ if current_microgame == shake_can:
