@@ -40,6 +40,7 @@ python main.py
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Or get the standalone installer for Python 3.X.X"
 ![Python.org Install](./python_install_windows.png)
+2. On the installation screen, ADD PYTHON AS PATH!
 ## MacOS
 ### Option 1: Terminal (If you have Git installed)
 1. Open terminal, then go to a directory of your choosing.
@@ -67,6 +68,7 @@ python3 main.py
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Download for macOS Python 3.X.X"
 ![Python.org Install](./python_install_macos.png)
+2. On the installation screen, ADD PYTHON AS PATH!
 ## Linux
 ### Terminal
 1. Install git:
