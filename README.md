@@ -1,7 +1,7 @@
 # GavinWare V1
 A parody game of one of Nintendo/Intelligent System's popular games: WarioWare.<br>
-## DISCLAIMER, THIS GAME USES SOME COPYRIGHTED AUDIO FROM THE TITLES WarioWare: Mega Microgames, The Legend of Zelda: Breath of the Wild, Avatar: The Last Airbender, and The Legend of Korra Respectively. I do not claim any ownership of any of the audio used whatsoever.
-## This game also uses a scoreboard: ['GavTechMaster's Scoreboards']('https://gavtechmaster.github.io')
+## This game also uses a scoreboard: [GavTechMaster's Scoreboards](https://gavtechmaster.github.io)
+#### DISCLAIMER, THIS GAME USES SOME COPYRIGHTED AUDIO FROM THE TITLES WarioWare: Mega Microgames, The Legend of Zelda: Breath of the Wild, Avatar: The Last Airbender, and The Legend of Korra Respectively. I do not claim any ownership of any of the audio used whatsoever.
 
 ## Controls:
 W - Main Select Button<br>
