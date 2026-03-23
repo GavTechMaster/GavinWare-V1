@@ -40,20 +40,6 @@ python main.py
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Or get the standalone installer for Python 3.X.X"
 ![Python.org Install](./python_install_windows.png)
-### If you don't have the required dependencies:
-1. Open terminal (or Powershell), FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main
-```
-```bash
-# Make sure you are inside the GavinWare directory or you are using an absolute path
-pip install -r requirements.txt
-```
-2. If that doesn't work, just type this command to install them simultaneously:
-```bash
-pip install pygame-ce numpy
-```
 ## MacOS
 ### Option 1: Terminal (If you have Git installed)
 1. Open terminal, then go to a directory of your choosing.
@@ -81,20 +67,6 @@ python3 main.py
 ### If you don't have python installed:
 1. Go to python.org, then go to Downloads > "Download for macOS Python 3.X.X"
 ![Python.org Install](./python_install_macos.png)
-### If you don't have the required dependencies:
-1. Open terminal, FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main
-```
-```bash
-# Make sure you are inside the GavinWare directory or you are using an absolute path
-pip3 install -r requirements.txt
-```
-2. If that doesn't work, just type this command to install them simultaneously:
-```bash
-pip3 install pygame-ce numpy
-```
 ## Linux
 ### Terminal
 1. Install git:
@@ -120,18 +92,4 @@ sudo apt update
 ```
 ```bash
 sudo apt install python3
-```
-### If you don't have the required dependencies:
-1. Open terminal, FIND WHERE YOUR REQUIREMENTS DIRECTORY IS, then type these commands:
-```bash
-# Make sure this is relative to you in CLI or make it an absolute path
-cd GavinWare-V1-main
-```
-```bash
-# Make sure you are inside the GavinWare directory or you are using an absolute path
-pip3 install -r requirements.txt
-```
-2. If that doesn't work, just type this command to install them simultaneously:
-```bash
-pip3 install pygame-ce numpy
 ```
