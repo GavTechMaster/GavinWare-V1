@@ -1371,7 +1371,7 @@ def azula_vs_katara():
     screen.blit(freeze_label, (screen_width - freeze_label.get_width(), heal_label.get_height() + icebend_label.get_height() + waterfall_label.get_height()))
 
 microgames = [change_image, fire_out, place_arrow, shake_can, shear_peasants]
-bosses = [azula_vs_katara]
+bosses = [kuvira_vs_azula, azula_vs_katara]
 
 # Functional Functions
 def score_eligible():
@@ -1555,8 +1555,10 @@ def set_name_screen():
                 letter_2_label = font.render(letter_2, False, (255, 255, 255))
                 letter_3_label = font.render(letter_3, False, (255, 255, 0))
         set_name_label = font.render("You got a high score! Set your name.", False, (255, 255, 255))
+        controls_label = medium_font.render("Press UP and DOWN to change letter value.", False, (255, 255, 0))
         screen.blit(set_name_label, (round(screen_width/2) - round(set_name_label.get_width()/2), 55))
         screen.blit(letter_1_label, (round(screen_width * 1/4) - round(letter_1_label.get_width() * 1/4), round(screen_height/2) - round(letter_1_label.get_height()/2)))
+        screen.blit(controls_label, (round(screen_width / 2) - round(controls_label.get_width() / 2), 55 + set_name_label.get_height()))
         screen.blit(letter_2_label, (round(screen_width * 2/4) - round(letter_2_label.get_width() * 2/4), round(screen_height/2) - round(letter_2_label.get_height()/2)))
         screen.blit(letter_3_label, (round(screen_width * 3/4) - round(letter_3_label.get_width() * 3/4), round(screen_height/2) - round(letter_3_label.get_height()/2)))
         confirm_label = font.render("Press W to continue", False, (255, 0, 0))
@@ -1818,7 +1820,7 @@ while running:
                                 if up_times < soda_shake_amount and (up_times == down_times or up_times < down_times):
                                     up_times += 1
                         case _ if current_microgame == azula_vs_katara:
-                            if not waterfall_cooldown and not freeze_heal_cooldown and not waterheal_cooldown:
+                            if not waterfall_cooldown and not freeze_heal_cooldown and not waterheal_cooldown and not boss_finished:
                                 azula_freeze = True
                                 katara_stamina = 0
                                 azula_lightning = False

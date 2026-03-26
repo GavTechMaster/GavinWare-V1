@@ -1,14 +1,14 @@
 {
-    "score_1": 0,
-    "score_2": 0,
-    "score_3": 0,
-    "score_4": 0,
+    "score_1": 128,
+    "score_2": 76,
+    "score_3": 14,
+    "score_4": 12,
     "score_5": 0,
     "score_names": [
-        "",
-        "",
-        "",
-        "",
+        "DOS",
+        "GIL",
+        "GAV",
+        "LIA",
         ""
     ]
 }
